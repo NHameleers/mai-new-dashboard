@@ -1,6 +1,9 @@
 import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+st.title('MAI Dashboard')
+
+df = pd.read_csv('https://raw.githubusercontent.com/LUCE-Blockchain/Databases-for-teaching/refs/heads/main/Framingham%20Dataset.csv')
+
+st.dataframe(df.head())
