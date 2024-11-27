@@ -6,4 +6,9 @@ st.title('MAI Dashboard')
 
 df = pd.read_csv('https://raw.githubusercontent.com/LUCE-Blockchain/Databases-for-teaching/refs/heads/main/Framingham%20Dataset.csv')
 
-st.dataframe(df.head())
+# st.dataframe(df.head())
+
+# add matplotlib figure
+fig, ax = plt.subplots()
+ax.scatter(df.AGE, df.SYSBP, alpha=0.3)
+st.pyplot(fig)
