@@ -37,11 +37,16 @@ fig, ax = plt.subplots()
 ax.scatter(df.AGE, df[yvar], alpha=0.3)
 st.pyplot(fig)
 
-'You can also use a widget to hide a section in your code'
+'''You can also use a widget to hide a section in your code,
+with just a simple `if` statement!'''
 
-show_colorful_plot = st.checkbox('Show colorful plot:')
-if show_colorful_plot:
-    st.altair_chart(chart.encode(
-        color='DIABETES:N'
-    ))
+
+show_extra_plot = st.checkbox('Show colorful plot:')
+if show_extra_plot:
+    chart = alt.Chart(df).mark_bar().encode(
+        x='mean(TOTCHOL)',
+        y='SEX:N',
+        color='SEX:N'
+    )
+    st.altair_chart(chart)
 
