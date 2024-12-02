@@ -41,7 +41,7 @@ st.pyplot(fig)
 with just a simple `if` statement!'''
 
 
-show_extra_plot = st.checkbox('Show colorful plot:')
+show_extra_plot = st.checkbox('Show extra plot:')
 if show_extra_plot:
     chart = alt.Chart(df).mark_bar().encode(
         x='mean(TOTCHOL)',
